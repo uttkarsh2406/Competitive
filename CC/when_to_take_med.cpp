@@ -39,8 +39,33 @@ int main(){
         ll days=0;
         if(month==8 || month&1){
             if(date&1){
-                
+                days+=((31-date)/2)+1;
             }
+            else{
+                days+=((31-date)/2)+1;
+            }
+            cout<<days<<endl;
+            continue;
+        }
+        else if(month!=2 && !(month&1)){
+            if(date&1){
+                days+=((29-date)/2)+1;
+            }
+            else{
+                days+=((29-date)/2)+1;
+            }
+            cout<<days+15<<endl;
+            continue;
+        }
+        else if(month==2 && leap){
+            days+=((29-date)/2)+1;
+            cout<<days<<endl;
+            continue;
+        }
+        else{
+            days+=((27-date)/2)+1;
+            cout<<days+15<<endl;
+            continue;
         }
 
     }
