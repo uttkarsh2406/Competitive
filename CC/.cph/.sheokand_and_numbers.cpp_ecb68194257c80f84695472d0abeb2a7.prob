@@ -1,0 +1,1 @@
+{"name":"Local: sheokand_and_numbers","url":"/home/uttkarsh/Documents/PRAC/CC/sheokand_and_numbers.cpp","tests":[{"id":1681034397274,"input":"3\n999967233\n22\n4","output":"73774592\n2\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/uttkarsh/Documents/PRAC/CC/sheokand_and_numbers.cpp","group":"local","local":true}

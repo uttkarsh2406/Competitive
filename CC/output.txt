@@ -1,3 +1,68 @@
-1
-2
-5
+using namespace std;
+ 
+#define ll long long int
+#define FIO ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0)
+#define mod 1000000007
+ 
+// compare two time in format HH:MM AM or HH:MM PM  
+bool compare(string L,string R){
+    
+    // remove last char as it will always be M
+    L.pop_back(); 
+    R.pop_back();
+    
+    // HH:MM AM <= HH:MM PM always hence return if last char of both time are not equal
+    if(L.back()!=R.back())
+        return L.back() < R.back();
+    
+    // Now both time will be either AM or PM so we can just ignore last char  
+    // 12:MM < 01:MM < 02:MM ... < 11:MM hence replace 12 by 00  
+    if(L[0]=='1' && L[1]=='2')   
+        L[0]=L[1]='0';
+    if(R[0]=='1' && R[1]=='2')
+        R[0]=R[1]='0';
+        
+    // now time is in format HH:MM where 00<=HH<=11 and 00<=MM<=59 hence we can directly compare both strings 
+    return L<=R;        
+}
+ 
+int main() {
+    
+    FIO;
+    int t,n,k,i,j;
+    string s,Li,Ri,p;
+    cin >> t;
+    while(t--){
+        p="";
+        // input p 
+        cin >> s;
+        p+=s;
+        cin >> s;
+        p+=s;
+            
+        cin >> n;
+        while(n--){
+            Li=Ri="";
+        
+            // input Li
+            cin >> s;
+            Li+=s;
+            cin >> s;
+            Li+=s;
+ 
+            // input Ri 
+            cin >> s;
+            Ri+=s;
+            cin >> s;
+            Ri+=s;
+        
+            // check if Li <= p <= Ri that is if Li <= p and p <= Ri
+            if(compare(Li,p) && compare(p,Ri))   
+                cout << "1";
+            else
+                cout << "0";
+        }
+        cout << "\n";           
+    }
+	return 0;
+}

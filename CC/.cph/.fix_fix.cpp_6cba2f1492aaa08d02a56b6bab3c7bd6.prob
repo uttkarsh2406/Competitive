@@ -1,0 +1,1 @@
+{"name":"Local: fix_fix","url":"/home/uttkarsh/Documents/PRAC/CC/fix_fix.cpp","tests":[{"id":1681055512601,"input":"3\n2 1\n3 1\n5 5","output":"-1\n1 3 2\n1 2 3 5 4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/uttkarsh/Documents/PRAC/CC/fix_fix.cpp","group":"local","local":true}
